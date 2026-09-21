@@ -1,0 +1,11 @@
+# Public file scope and provenance
+
+The first public snapshot is selected file by file from the fixed dev14 working tree. The original internal directory, history bundle and evaluation logs remain local. No force-push or unrelated repository changes are part of this release.
+
+Included: product modules and frozen runtime contracts; Skill/core/R-A/safety and bounded developer examples; non-secret configs; MIT/build metadata; original authored synthetic P1/P1.2 scenarios and intercepted-transport tests; new dev14 synthetic interaction tests; current usage, architectural and memory documentation. Synthetic JSONL is intentionally retained where it is authored test input (`data/cases.jsonl`), not an original user log. Public example personal/health claims are fabricated test data, not identifiable people's records. External reading summaries are source-attributed project design material, not reproduced books or efficacy evidence.
+
+Excluded: all private handoff/user-scope/approved-handoff files, internal review reports, raw live evaluation logs and partial actual-output replay fixtures, old full ZIPs, Git bundles/history, user databases, environments, credentials, build caches and internal diagnostic approval matrices. Historical P1.3 experiment commands register only if their private materials exist; those modules/materials and dependent tests are not distributed here. Their original regression suite remains in the internal workspace and is run offline there. This does not remove existing private tests to claim a public pass.
+
+Publication-only source change: CLI conditionally registers archived diagnostics. Core chat and existing approved data/memory paths are identical between the internal fixed tree and the public tree. Skill installation references were updated to avoid unusable historical paid commands; persona and runtime generation/review contracts are unchanged. `scripts/test_offline.py` is the public CI entry.
+
+The public manifest enumerates every selected file and hash. Wheel and Skill bytes are checked against this public source. ZIPs exclude .git and old packages; no internal delivery ZIP is a release asset. New files added after manifest generation require regeneration and another scope review. GitHub upload status and verified commit are reported separately; a local build is not a published release.

@@ -1,0 +1,101 @@
+{
+  "id": "p12-T10-v0",
+  "provenance": "original synthetic continuous evaluation; no private user data",
+  "generated": false,
+  "features": {
+    "memory_assist": true,
+    "context_summary": true
+  },
+  "checks": [
+    "容量触发、来源完整、否定与条件保留；删除后摘要失效；短对话零摘要调用。"
+  ],
+  "human_review": {
+    "specific_response": null,
+    "template_repetition": null,
+    "understood_correction": null,
+    "respects_pause": null,
+    "role_continuity": null,
+    "examples": []
+  },
+  "steps": [
+    {
+      "command": "/memory-mode auto"
+    },
+    {
+      "user": "以后别拿成绩开玩笑。"
+    },
+    {
+      "user": "今天可以，平时还是别说。"
+    },
+    {
+      "user": "我说的是准备了很久，不是没准备。"
+    },
+    {
+      "user": "下次再聊篮球。"
+    },
+    {
+      "user": "合成日常第1段：我看见云飘过窗边。"
+    },
+    {
+      "user": "合成日常第2段：我看见云飘过窗边。"
+    },
+    {
+      "user": "合成日常第3段：我看见云飘过窗边。"
+    },
+    {
+      "user": "合成日常第4段：我看见云飘过窗边。"
+    },
+    {
+      "user": "合成日常第5段：我看见云飘过窗边。"
+    },
+    {
+      "user": "合成日常第6段：我看见云飘过窗边。"
+    },
+    {
+      "user": "合成日常第7段：我看见云飘过窗边。"
+    },
+    {
+      "user": "合成日常第8段：我看见云飘过窗边。"
+    },
+    {
+      "user": "合成日常第9段：我看见云飘过窗边。"
+    },
+    {
+      "user": "合成日常第10段：我看见云飘过窗边。"
+    },
+    {
+      "user": "合成日常第11段：我看见云飘过窗边。"
+    },
+    {
+      "user": "合成日常第12段：我看见云飘过窗边。"
+    },
+    {
+      "user": "合成日常第13段：我看见云飘过窗边。"
+    },
+    {
+      "user": "之前说好的下次话题还记得吗？"
+    },
+    {
+      "command": "/auto-forget all",
+      "assertions": [
+        {
+          "kind": "row_count",
+          "value": 0,
+          "failure_class": "deletion_residue"
+        },
+        {
+          "kind": "derived_empty",
+          "value": null,
+          "failure_class": "deletion_residue"
+        }
+      ]
+    },
+    {
+      "new_session": true
+    },
+    {
+      "user": "之前约好聊什么还记得吗？"
+    }
+  ],
+  "model_outputs": null
+}

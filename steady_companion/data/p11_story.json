@@ -1,0 +1,120 @@
+{
+  "id": "p11-memory-continuity",
+  "provenance": "original synthetic scenario for P1.1; no real private chat",
+  "generated": false,
+  "model_outputs": null,
+  "steps": [
+    {
+      "command": "/memory-mode auto"
+    },
+    {
+      "user": "平时挺喜欢打篮球的。",
+      "observe": [
+        "口语自述保存普通兴趣；不强行追问"
+      ]
+    },
+    {
+      "user": "我喜欢篮球，也喜欢游泳。",
+      "observe": [
+        "去重篮球，独立保存游泳；证据不相互污染"
+      ]
+    },
+    {
+      "command": "/auto-correct A1 我喜欢钢琴。",
+      "observe": [
+        "手动更换主题、匹配标识和范围"
+      ]
+    },
+    {
+      "user": "我不喜欢篮球。",
+      "observe": [
+        "钢琴记录仍在，篮球独立否定；回应根据当前表达"
+      ]
+    },
+    {
+      "user": "以后别拿成绩开玩笑。",
+      "observe": [
+        "普通边界持久保存"
+      ]
+    },
+    {
+      "user": "今天可以，平时还是别说。",
+      "observe": [
+        "本次例外，不永久撤回"
+      ]
+    },
+    {
+      "new_session": true
+    },
+    {
+      "user": "关于成绩，我之前说的玩笑边界是什么？",
+      "observe": [
+        "重启后原长期边界还在"
+      ]
+    },
+    {
+      "user": "现在可以拿成绩开玩笑了。",
+      "observe": [
+        "撤回旧禁令，当前上下文和数据库一致"
+      ]
+    },
+    {
+      "user": "以后别提我的 HIV 阳性检测结果。",
+      "provenance": "synthetic health phrase, not real user data",
+      "observe": [
+        "当前尊重边界，所有自动类别/证据均不持久保存敏感事实"
+      ]
+    },
+    {
+      "user": "我们管这种人叫“隐形学霸”。",
+      "observe": [
+        "无解释不编造，暂不持久保存"
+      ]
+    },
+    {
+      "user": "就是说先说自己不会、结果考第一的人。",
+      "observe": [
+        "关联紧接的用户解释，私有圈子范围"
+      ]
+    },
+    {
+      "new_session": true
+    },
+    {
+      "user": "你记得我喜欢哪些普通活动，以及隐形学霸在我们这里的含义吗？",
+      "observe": [
+        "钢琴/游泳与篮球否定并存；局部词义可取；无敏感事实和旧禁令"
+      ]
+    },
+    {
+      "command": "/auto-forget all"
+    },
+    {
+      "new_session": true
+    },
+    {
+      "user": "我之前喜欢哪些活动？",
+      "observe": [
+        "清空后不伪装记得"
+      ]
+    },
+    {
+      "command": "/memory-mode manual"
+    },
+    {
+      "user": "我喜欢摄影。",
+      "observe": [
+        "关闭后不自动写入"
+      ]
+    },
+    {
+      "new_session": true
+    },
+    {
+      "user": "你知道我喜欢摄影吗？",
+      "observe": [
+        "不从未持久保存的旧会话伪造回忆"
+      ]
+    }
+  ]
+}

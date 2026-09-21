@@ -1,0 +1,33 @@
+{
+  "id": "p12-unsaved-v0",
+  "provenance": "synthetic unsaved negative control",
+  "features": {
+    "memory_assist": true,
+    "context_summary": false
+  },
+  "checks": [
+    "数据库应为空；即使回答猜中也不能计为检索成功。"
+  ],
+  "steps": [
+    {
+      "command": "/memory-mode manual"
+    },
+    {
+      "user": "我喜欢航海故事。"
+    },
+    {
+      "new_session": true
+    },
+    {
+      "user": "你知道我偏爱哪类故事吗？",
+      "assertions": [
+        {
+          "kind": "row_count",
+          "value": 0,
+          "failure_class": "wrong_extraction"
+        }
+      ]
+    }
+  ],
+  "model_outputs": null
+}

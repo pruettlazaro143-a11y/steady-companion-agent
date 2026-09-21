@@ -1,0 +1,10 @@
+{
+  "version": "companion-materials-dev9",
+  "files": {
+    "companion-v1.md": "6e2b8a3a813cb0c10e8290f70584d709012ad9cc7595047bbbd436e9ba96ffd9",
+    "companion-v2.md": "a17136ac1f74089e992e7cc13600ef98387124dc692646ee1f6cd72a15f0be92",
+    "companion-examples-v1.json": "001a41f93142f71a67efcab39a5c8216f34e2e7cb0561e03e557ccdc99a613cc"
+  },
+  "max_runtime_chars": 6000,
+  "max_examples_chars": 3000
+}

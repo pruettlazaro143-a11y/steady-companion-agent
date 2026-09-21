@@ -1,0 +1,52 @@
+{
+  "id": "p12-T2-v0",
+  "provenance": "original synthetic continuous evaluation; no private user data",
+  "generated": false,
+  "features": {
+    "memory_assist": true,
+    "context_summary": false
+  },
+  "checks": [
+    "自由命名不编造寓意；指代仅有唯一依据时关联；重启能读实际记录。"
+  ],
+  "human_review": {
+    "specific_response": null,
+    "template_repetition": null,
+    "understood_correction": null,
+    "respects_pause": null,
+    "role_continuity": null,
+    "examples": []
+  },
+  "steps": [
+    {
+      "command": "/memory-mode auto"
+    },
+    {
+      "user": "我把桌上那盆薄荷叫小强，名字就是随便起的。",
+      "assertions": [
+        {
+          "kind": "row_count",
+          "value": 1,
+          "failure_class": "extraction_omission"
+        }
+      ]
+    },
+    {
+      "user": "它今天又蔫了。"
+    },
+    {
+      "new_session": true
+    },
+    {
+      "user": "我那盆薄荷叫什么？",
+      "assertions": [
+        {
+          "kind": "retrieved",
+          "value": null,
+          "failure_class": "retrieval_omission"
+        }
+      ]
+    }
+  ],
+  "model_outputs": null
+}

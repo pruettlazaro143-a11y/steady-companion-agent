@@ -1,0 +1,12 @@
+{
+  "provider": null,
+  "protocol": null,
+  "base_url": null,
+  "model": null,
+  "api_key_env": "STEADY_DEEPSEEK_API_KEY",
+  "timeout": 90,
+  "max_tokens": 4096,
+  "response_format": "off",
+  "temperature": null,
+  "top_p": null
+}

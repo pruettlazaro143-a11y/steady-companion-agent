@@ -1,0 +1,59 @@
+{
+  "id": "p12-T4-v2",
+  "provenance": "original synthetic continuous evaluation; no private user data",
+  "generated": false,
+  "features": {
+    "memory_assist": true,
+    "context_summary": false
+  },
+  "checks": [
+    "长期范围原子替代；临时例外不掩盖旧持久目标；无关边界保留。"
+  ],
+  "human_review": {
+    "specific_response": null,
+    "template_repetition": null,
+    "understood_correction": null,
+    "respects_pause": null,
+    "role_continuity": null,
+    "examples": []
+  },
+  "steps": [
+    {
+      "command": "/memory-mode auto"
+    },
+    {
+      "user": "以后别开玩笑。"
+    },
+    {
+      "user": "今天可以开玩笑。"
+    },
+    {
+      "user": "以后别每句都问问题。"
+    },
+    {
+      "user": "以后只在聊考试时别开玩笑，其他话题可以。"
+    },
+    {
+      "new_session": true
+    },
+    {
+      "user": "聊聊电影",
+      "assertions": [
+        {
+          "kind": "row_count",
+          "value": 2,
+          "failure_class": "conflict_handling"
+        },
+        {
+          "kind": "stored_absent",
+          "value": "boundary:joke:*",
+          "failure_class": "conflict_handling"
+        }
+      ]
+    },
+    {
+      "new_session": true
+    }
+  ],
+  "model_outputs": null
+}

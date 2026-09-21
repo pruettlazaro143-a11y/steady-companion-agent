@@ -1,0 +1,77 @@
+{
+  "id": "p12-pilot-T1-T2-T6",
+  "provenance": "original synthetic seven-turn pilot; no model answers",
+  "features": {
+    "memory_assist": true,
+    "context_summary": false
+  },
+  "steps": [
+    {
+      "command": "/memory-mode auto"
+    },
+    {
+      "user": "平时挺爱看推理小说的，不过太血腥的我不喜欢。",
+      "assertions": [
+        {
+          "kind": "saved_exact",
+          "value": "平时挺爱看推理小说的，不过太血腥的我不喜欢。",
+          "failure_class": "extraction_omission"
+        }
+      ]
+    },
+    {
+      "new_session": true
+    },
+    {
+      "user": "你还记得我偏爱哪类故事吗？",
+      "assertions": [
+        {
+          "kind": "retrieved_exact",
+          "value": "平时挺爱看推理小说的，不过太血腥的我不喜欢。",
+          "failure_class": "retrieval_omission"
+        }
+      ]
+    },
+    {
+      "user": "我把桌上那盆薄荷叫小强，名字就是随便起的。",
+      "assertions": [
+        {
+          "kind": "saved_exact",
+          "value": "我把桌上那盆薄荷叫小强，名字就是随便起的。",
+          "failure_class": "extraction_omission"
+        }
+      ]
+    },
+    {
+      "new_session": true
+    },
+    {
+      "user": "我那盆薄荷叫什么？",
+      "assertions": [
+        {
+          "kind": "retrieved_exact",
+          "value": "我把桌上那盆薄荷叫小强，名字就是随便起的。",
+          "failure_class": "retrieval_omission"
+        }
+      ]
+    },
+    {
+      "user": "今天考试没考好，准备了很久。"
+    },
+    {
+      "inject": {
+        "role": "assistant",
+        "content": "看来是这次准备得不够。"
+      },
+      "provenance": "synthetic_mismatch; explicitly injected, NOT a measured model failure"
+    },
+    {
+      "user": "我说的是准备了很久，不是没准备。"
+    },
+    {
+      "user": "先不分析了。"
+    }
+  ],
+  "model_outputs": null,
+  "diagnostic_note": "P1.2.1 adds host assertions; input/order unchanged. Does not rewrite historical logs."
+}

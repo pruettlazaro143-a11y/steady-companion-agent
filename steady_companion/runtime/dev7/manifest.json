@@ -1,0 +1,15 @@
+{
+  "baseline": "Agent 0.6.0.dev7 / Skill 0.8.0-dev7",
+  "files": {
+    "identity.md": "3fb20bf36a13b9f3463d504af88a2d77ba6d34e2ce0c463313111d5c91071e16",
+    "generation.md": "664d9c85ac924ee9a89a9b056dfe8be4e25517020ec331e42a86c60f22a17570",
+    "review.md": "bc4621b9d85a5e7555fc6b3fdaff80aeecc845cf5f736f97bc9809c6ea4ae901",
+    "SKILL.md": "8586aae4fc85a3f9f5294eaf9d98b459b7b366f15e0ccc69807277319b2a111b",
+    "core.md": "d724dc6dbf3d480e1589e1b98579e09f437164310fed8e515ed8bb86755ab9bb",
+    "R-A.json": "910af84807ce2957ae9151389290c85deba5d350adbd357f553b27c5ac53c6ab",
+    "safety.md": "3433e4c1b35884df7e15ced7f60f04adccfed549f78c9ae7ffabf37f2acc3cd0",
+    "generation-contrasts.json": "a8cf21545e8d7b8dc182296d3c635641a194150a69ec437c048676c09d250e78",
+    "review-contrasts.json": "90c557a6328b53b38152a16f7a2fbfa46df12dbde9360bd195a01cdf9484c1c6",
+    "formats.json": "8546a94f25ff47c203944e37117282518c0aa7a877f1dcaa0a194e880245cd10"
+  }
+}

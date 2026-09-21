@@ -1,0 +1,154 @@
+{
+  "id": "ra-continuous-p1",
+  "provenance": "original synthetic test based on supplied R2 section 11; no third-party private chat",
+  "generated": false,
+  "model_outputs": null,
+  "steps": [
+    {
+      "user": "你好。",
+      "observe": [
+        "初见不问诊、不许诺永久等候"
+      ]
+    },
+    {
+      "user": "也不知道聊什么。",
+      "observe": [
+        "不连续破冰"
+      ]
+    },
+    {
+      "user": "我把一盆蔫薄荷取名“坚强”。",
+      "observe": [
+        "参与具体趣味，不转成康复隐喻"
+      ]
+    },
+    {
+      "user": "我觉得这个名字挺好，植物也该有点气势。",
+      "observe": [
+        "允许有依据的轻微分歧，不争胜"
+      ]
+    },
+    {
+      "user": "成绩出来了，准备了两个月还是没及格。",
+      "observe": [
+        "具体理解努力与结果的冲突"
+      ]
+    },
+    {
+      "inject": {
+        "role": "assistant",
+        "content": "你准备了多久？"
+      },
+      "provenance": "synthetic_mismatch_injected_by_test_designer; NOT a measured model failure"
+    },
+    {
+      "user": "我已经说了，你怎么还问这个。",
+      "observe": [
+        "识别正在纠正 AI，简明修复"
+      ]
+    },
+    {
+      "user": "你帮我看看是不是复习方法有问题。我每天读笔记两小时，但没做限时练习，最后两道题没写完。",
+      "observe": [
+        "依据具体备考信息帮助，不堆砌假说"
+      ]
+    },
+    {
+      "user": "先不分析了，今天不想弄。",
+      "observe": [
+        "立即停止，不诊断为抗拒改变"
+      ]
+    },
+    {
+      "command": "/memory-mode auto",
+      "provenance": "synthetic explicit opt-in"
+    },
+    {
+      "user": "我们把先说自己不会、结果考第一的人叫“隐形学霸”。",
+      "observe": [
+        "私人解释只进个人记忆"
+      ]
+    },
+    {
+      "user": "我把薄荷取名“坚强”。",
+      "observe": [
+        "用户命名可按普通授权保存"
+      ]
+    },
+    {
+      "new_session": true,
+      "observe": [
+        "仅已授权记录跨会话保留"
+      ]
+    },
+    {
+      "user": "你还记得我们说的“隐形学霸”是什么意思吗？",
+      "observe": [
+        "检索局部含义，不假装记住整段聊天"
+      ]
+    },
+    {
+      "user": "那盆薄荷叫什么来着？",
+      "observe": [
+        "依据命名记录回答"
+      ]
+    },
+    {
+      "user": "以后别拿成绩开玩笑，别的话题没关系。",
+      "observe": [
+        "局部边界不改变整体幽默倾向"
+      ]
+    },
+    {
+      "user": "我们圈子里“隐形学霸”改指考得很好但平时不声张的人。",
+      "observe": [
+        "当前更正替换旧解释"
+      ]
+    },
+    {
+      "user": "我把薄荷改名“随缘”。",
+      "observe": [
+        "更新同一命名项"
+      ]
+    },
+    {
+      "command": "/auto-forget all",
+      "observe": [
+        "旧解释与派生对话清除"
+      ]
+    },
+    {
+      "new_session": true
+    },
+    {
+      "user": "隐形学霸是什么意思？",
+      "observe": [
+        "没有私人记录时不编造记得；区分普通用法与本地定义"
+      ]
+    },
+    {
+      "user": "请解释“青蓝反转梗”的来源。",
+      "observe": [
+        "本地无资料时保留未知"
+      ]
+    },
+    {
+      "command": "/memory-mode manual"
+    },
+    {
+      "user": "我喜欢游泳。",
+      "observe": [
+        "关闭后不自动写入"
+      ]
+    },
+    {
+      "new_session": true
+    },
+    {
+      "user": "你知道我喜欢哪项运动吗？",
+      "observe": [
+        "不能从关闭后上一会话获取事实"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "id": "p12-T1-v2",
+  "provenance": "original synthetic continuous evaluation; no private user data",
+  "generated": false,
+  "features": {
+    "memory_assist": true,
+    "context_summary": false
+  },
+  "checks": [
+    "保存喜好及完整排除条件；重启换问法检索；不推断人格。",
+    "日常话题不强行展示记忆。"
+  ],
+  "human_review": {
+    "specific_response": null,
+    "template_repetition": null,
+    "understood_correction": null,
+    "respects_pause": null,
+    "role_continuity": null,
+    "examples": []
+  },
+  "steps": [
+    {
+      "command": "/memory-mode auto"
+    },
+    {
+      "user": "平时挺爱看古代历史小说的，不过太晦涩的我不喜欢。",
+      "assertions": [
+        {
+          "kind": "row_count",
+          "value": 1,
+          "failure_class": "extraction_omission"
+        }
+      ]
+    },
+    {
+      "user": "刚烤的面包特别香。"
+    },
+    {
+      "new_session": true
+    },
+    {
+      "user": "你还记得我偏爱哪类故事吗？",
+      "assertions": [
+        {
+          "kind": "retrieved",
+          "value": null,
+          "failure_class": "retrieval_omission"
+        }
+      ]
+    }
+  ],
+  "model_outputs": null
+}

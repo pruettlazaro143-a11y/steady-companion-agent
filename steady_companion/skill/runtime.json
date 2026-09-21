@@ -1,0 +1,10 @@
+{
+  "version": "p1.3-dev14",
+  "role_id": "R-A",
+  "core_version": "core-r1-1",
+  "topics_max_records": 3,
+  "topics_max_chars": 4000,
+  "memory_max_records": 8,
+  "memory_max_chars": 4000,
+  "selection_protocol": "review-ranked-v1"
+}

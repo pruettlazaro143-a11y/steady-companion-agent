@@ -1,0 +1,42 @@
+{
+  "id": "p12-T3-v1",
+  "provenance": "original synthetic continuous evaluation; no private user data",
+  "generated": false,
+  "features": {
+    "memory_assist": true,
+    "context_summary": false
+  },
+  "checks": [
+    "喜好、过去和当前行动分开；时间条件不能被去重丢失。"
+  ],
+  "human_review": {
+    "specific_response": null,
+    "template_repetition": null,
+    "understood_correction": null,
+    "respects_pause": null,
+    "role_continuity": null,
+    "examples": []
+  },
+  "steps": [
+    {
+      "command": "/memory-mode auto"
+    },
+    {
+      "user": "我以前喜欢甜咖啡。"
+    },
+    {
+      "user": "这周在戒糖，点咖啡时都选不加糖。",
+      "assertions": [
+        {
+          "kind": "row_count",
+          "value": 2,
+          "failure_class": "conflict_handling"
+        }
+      ]
+    },
+    {
+      "user": "帮我想想今天点什么口味。"
+    }
+  ],
+  "model_outputs": null
+}

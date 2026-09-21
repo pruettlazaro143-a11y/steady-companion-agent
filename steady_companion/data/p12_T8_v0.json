@@ -1,0 +1,54 @@
+{
+  "id": "p12-T8-v0",
+  "provenance": "original synthetic continuous evaluation; no private user data",
+  "generated": false,
+  "features": {
+    "memory_assist": true,
+    "context_summary": false
+  },
+  "checks": [
+    "manual 未授权；他人转述不归本人；合成敏感事实不落盘。"
+  ],
+  "human_review": {
+    "specific_response": null,
+    "template_repetition": null,
+    "understood_correction": null,
+    "respects_pause": null,
+    "role_continuity": null,
+    "examples": []
+  },
+  "steps": [
+    {
+      "command": "/memory-mode auto"
+    },
+    {
+      "command": "/memory-mode manual"
+    },
+    {
+      "user": "我喜欢推理小说。"
+    },
+    {
+      "new_session": true
+    },
+    {
+      "user": "我之前说的新爱好还记得吗？"
+    },
+    {
+      "command": "/memory-mode auto"
+    },
+    {
+      "user": "朋友说他喜欢游泳。"
+    },
+    {
+      "user": "合成测试句：以后别提我的 HIV 阳性检测结果。",
+      "assertions": [
+        {
+          "kind": "row_count",
+          "value": 0,
+          "failure_class": "wrong_extraction"
+        }
+      ]
+    }
+  ],
+  "model_outputs": null
+}

@@ -1,0 +1,64 @@
+{
+  "id": "p12-T7-v0",
+  "provenance": "original synthetic continuous evaluation; no private user data",
+  "generated": false,
+  "features": {
+    "memory_assist": true,
+    "context_summary": false
+  },
+  "checks": [
+    "删除正文、证据及派生状态；问题不提供答案，不靠猜测评定成功。"
+  ],
+  "human_review": {
+    "specific_response": null,
+    "template_repetition": null,
+    "understood_correction": null,
+    "respects_pause": null,
+    "role_continuity": null,
+    "examples": []
+  },
+  "steps": [
+    {
+      "command": "/memory-mode auto"
+    },
+    {
+      "user": "我把桌上那盆薄荷叫小强，名字就是随便起的。",
+      "assertions": [
+        {
+          "kind": "row_count",
+          "value": 1,
+          "failure_class": "extraction_omission"
+        }
+      ]
+    },
+    {
+      "command": "/auto-forget all",
+      "assertions": [
+        {
+          "kind": "row_count",
+          "value": 0,
+          "failure_class": "deletion_residue"
+        },
+        {
+          "kind": "derived_empty",
+          "value": null,
+          "failure_class": "deletion_residue"
+        }
+      ]
+    },
+    {
+      "new_session": true
+    },
+    {
+      "user": "我给薄荷取的名字还记得吗？",
+      "assertions": [
+        {
+          "kind": "row_count",
+          "value": 0,
+          "failure_class": "deletion_residue"
+        }
+      ]
+    }
+  ],
+  "model_outputs": null
+}

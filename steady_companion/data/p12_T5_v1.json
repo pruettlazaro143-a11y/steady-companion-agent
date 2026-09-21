@@ -1,0 +1,73 @@
+{
+  "id": "p12-T5-v1",
+  "provenance": "original synthetic continuous evaluation; no private user data",
+  "generated": false,
+  "features": {
+    "memory_assist": true,
+    "context_summary": false
+  },
+  "checks": [
+    "程序注入仅离线 test_p111/test_p12。此 live 卡只测明确重新表述和删除。"
+  ],
+  "human_review": {
+    "specific_response": null,
+    "template_repetition": null,
+    "understood_correction": null,
+    "respects_pause": null,
+    "role_continuity": null,
+    "examples": []
+  },
+  "steps": [
+    {
+      "command": "/memory-mode auto"
+    },
+    {
+      "user": "我喜欢游泳。"
+    },
+    {
+      "user": "我不喜欢游泳。"
+    },
+    {
+      "user": "我不喜欢游泳。",
+      "assertions": [
+        {
+          "kind": "row_count",
+          "value": 1,
+          "failure_class": "conflict_handling"
+        }
+      ]
+    },
+    {
+      "new_session": true
+    },
+    {
+      "user": "游泳"
+    },
+    {
+      "command": "/auto-forget all",
+      "assertions": [
+        {
+          "kind": "row_count",
+          "value": 0,
+          "failure_class": "deletion_residue"
+        },
+        {
+          "kind": "derived_empty",
+          "value": null,
+          "failure_class": "deletion_residue"
+        }
+      ]
+    },
+    {
+      "user": "继续随便聊聊",
+      "assertions": [
+        {
+          "kind": "row_count",
+          "value": 0,
+          "failure_class": "deletion_residue"
+        }
+      ]
+    }
+  ],
+  "model_outputs": null
+}

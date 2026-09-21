@@ -1,0 +1,49 @@
+{
+  "id": "p12-T6-v0",
+  "provenance": "original synthetic continuous evaluation; no private user data",
+  "generated": false,
+  "features": {
+    "memory_assist": true,
+    "context_summary": false
+  },
+  "checks": [
+    "synthetic_mismatch 是注入不是模型失败；回应具体纠正，尊重暂停。"
+  ],
+  "human_review": {
+    "specific_response": null,
+    "template_repetition": null,
+    "understood_correction": null,
+    "respects_pause": null,
+    "role_continuity": null,
+    "examples": []
+  },
+  "steps": [
+    {
+      "command": "/memory-mode auto"
+    },
+    {
+      "user": "今天考试没考好，准备了很久。"
+    },
+    {
+      "inject": {
+        "role": "assistant",
+        "content": "看来是这次准备得不够。"
+      },
+      "provenance": "synthetic_mismatch; explicitly injected, NOT a measured model failure"
+    },
+    {
+      "user": "我说的是准备了很久，不是没准备。"
+    },
+    {
+      "user": "先不分析了。",
+      "assertions": [
+        {
+          "kind": "row_count",
+          "value": 0,
+          "failure_class": "wrong_extraction"
+        }
+      ]
+    }
+  ],
+  "model_outputs": null
+}

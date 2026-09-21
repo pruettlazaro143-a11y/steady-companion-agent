@@ -1,0 +1,38 @@
+{
+  "id": "p12-T9-v2",
+  "provenance": "original synthetic continuous evaluation; no private user data",
+  "generated": false,
+  "features": {
+    "memory_assist": true,
+    "context_summary": false
+  },
+  "checks": [
+    "回应当下生活内容，结束不强留；有检索不等于应展示档案。"
+  ],
+  "human_review": {
+    "specific_response": null,
+    "template_repetition": null,
+    "understood_correction": null,
+    "respects_pause": null,
+    "role_continuity": null,
+    "examples": []
+  },
+  "steps": [
+    {
+      "command": "/memory-mode auto"
+    },
+    {
+      "user": "平时挺爱看古代历史小说的，不过太晦涩的我不喜欢。"
+    },
+    {
+      "user": "我把桌上那盆迷迭香叫Zeta17，名字就是随便起的。"
+    },
+    {
+      "user": "纸袋破了，圆土豆滚进了楼道。"
+    },
+    {
+      "user": "换个话题，聊聊天气吧。"
+    }
+  ],
+  "model_outputs": null
+}

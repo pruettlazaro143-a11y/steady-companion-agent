@@ -1,0 +1,75 @@
+{
+  "version": "0.6.0.dev14",
+  "skill": "0.8.0-dev14",
+  "configuration": "p1.3-dev14",
+  "internal_regression": {
+    "tests": 673,
+    "passed": 673,
+    "seconds": 11.996,
+    "baseline_test_files_unchanged": 31,
+    "baseline_tests": 648,
+    "new_tests": 25
+  },
+  "public_regression": {
+    "tests": 346,
+    "passed": 346,
+    "seconds": 3.231,
+    "scope": "reviewed subset plus the same 25 new tests and 12 existing official transport tests; not 346 additional unique tests"
+  },
+  "network": "socket connect, connect_ex and create_connection blocked; credential-free test subprocess",
+  "real_inference_calls": 0,
+  "private_chat_or_user_database_access": false,
+  "frozen_product_modules_byte_unchanged": [
+    "engine.py",
+    "natural_memory.py",
+    "semantic_memory.py",
+    "memory_language.py",
+    "store.py",
+    "pipeline.py",
+    "companion_runtime.py",
+    "companion_pipeline.py",
+    "provider.py",
+    "chat_transport.py",
+    "model_access.py"
+  ],
+  "state_reproduction": "all F1-F5 reproduced before edits; new synthetic counterparts in public tests",
+  "runtime_reproduction": {
+    "before": [
+      {
+        "case": "F1",
+        "conflicting_draft_delivered": true,
+        "mock_requests": 2,
+        "check_status": "not_triggered",
+        "committed_history_messages": 4,
+        "real_api_calls": 0
+      },
+      {
+        "case": "F3",
+        "conflicting_draft_delivered": true,
+        "mock_requests": 1,
+        "check_status": "not_triggered",
+        "committed_history_messages": 2,
+        "real_api_calls": 0
+      }
+    ],
+    "after": [
+      {
+        "case": "F1",
+        "conflicting_draft_delivered": false,
+        "mock_requests": 3,
+        "check_status": "conflict",
+        "committed_history_messages": 2,
+        "real_api_calls": 0
+      },
+      {
+        "case": "F3",
+        "conflicting_draft_delivered": false,
+        "mock_requests": 2,
+        "check_status": "conflict",
+        "committed_history_messages": 0,
+        "real_api_calls": 0
+      }
+    ]
+  },
+  "quality_claim": "no new naturalness or semantic-check accuracy evidence"
+}

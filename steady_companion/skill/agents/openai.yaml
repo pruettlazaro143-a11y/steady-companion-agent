@@ -1,0 +1,13 @@
+interface:
+  display_name: 稳伴 · Steady Companion
+  short_description: 以自然交往、可纠正理解和渐进记忆支持情绪困扰，尊重拒绝与个人节奏
+  default_prompt: 使用 $steady-companion 和我自然聊聊，按我的节奏提供支持。
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true

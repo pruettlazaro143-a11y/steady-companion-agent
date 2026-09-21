@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "steady-companion-agent"
+version = "0.6.0.dev14"
+description = "Experimental AI companion framework with user-controlled memory"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "Steady Companion contributors"}]
+dependencies = []
+
+[project.scripts]
+steady-companion = "steady_companion.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["steady_companion*"]
+
+[tool.setuptools.package-data]
+steady_companion = ["runtime/*.md", "runtime/*.json", "runtime/dev7/*", "skill/SKILL.md", "skill/LICENSE", "skill/references/*.md", "skill/references/*.json", "skill/agents/*.yaml", "skill/assets/*.svg", "data/*.jsonl", "data/*.json", "data/expression/*.json", "skill/core.md", "skill/runtime.json", "skill/roles/*.json", "skill/topics/*.json"]
