@@ -654,6 +654,12 @@ def parser() -> argparse.ArgumentParser:
     chat_parser.add_argument("--trace", action="store_true", help="Show transient metadata, never hidden reasoning")
     chat_parser.add_argument("--response-mode", choices=("checked", "direct", "companion"), default="checked", action=ExplicitResponseMode)
     chat_parser.add_argument("--emoji", choices=("off", "light"), default="off")
+    experience = sub.add_parser('eval-experience', help='Six-turn synthetic continuity trial; offline by default; fixed 12-request cap')
+    experience.add_argument('--connection', type=Path, default=Path('configs/deepseek-official.json'))
+    experience.add_argument('--output', type=Path, help='New exclusive local report directory; default unique eval-results/continuous-dev15-*')
+    experience.add_argument('--interaction-control', choices=('session',), default='session')
+    experience.add_argument('--interaction-check', choices=('selective',), default='selective')
+    experience.add_argument('--confirm-live', action='store_true', help='Authorize at most 12 paid requests and local synthetic visible reply/withheld-candidate capture; no retry')
     story = sub.add_parser('eval-story', help='Continuous synthetic P1 scenario; offline unless --confirm-live')
     story.add_argument('--scenario', type=Path, default=Path(__file__).parent/'data/p1_story.json')
     story.add_argument('--output', type=Path, default=Path('eval-results/p1-story.json'))
@@ -733,6 +739,7 @@ def main(argv=None) -> int:
         args.response_mode, args.emoji = "checked", "off"
     from .story_eval import evaluate_story, evaluate_diagnostic
     from .compare_eval import evaluate_comparison
+    from .experience_eval import evaluate as evaluate_experience
     archived={}
     if archived_experiments_available():
         from .expression_eval import evaluate_expression
@@ -745,7 +752,7 @@ def main(argv=None) -> int:
         from .config_compare import evaluate as evaluate_config_compare
         archived={"eval-config-compare":evaluate_config_compare,"eval-companionship":evaluate_companionship,"eval-assumptions":evaluate_assumptions,"eval-grounding":evaluate_grounding,"eval-review-inputs":evaluate_review_inputs,"eval-small":evaluate_small,"eval-dev2-plan":export_plan,"eval-expression":evaluate_expression}
     try:
-        return {**archived,"eval-diagnose":evaluate_diagnostic,"eval-story":evaluate_story,"eval-pilot":evaluate_story,"eval-compare":evaluate_comparison, "chat": chat, "doctor": doctor, "demo": demo, "eval": evaluate, "inspect": inspect_runtime}[args.command](args)
+        return {**archived,"eval-experience":evaluate_experience,"eval-diagnose":evaluate_diagnostic,"eval-story":evaluate_story,"eval-pilot":evaluate_story,"eval-compare":evaluate_comparison, "chat": chat, "doctor": doctor, "demo": demo, "eval": evaluate, "inspect": inspect_runtime}[args.command](args)
     except (ValueError, ProviderError) as exc:
         # Expected provider/config validation messages are already redacted.
         print("Error: " + visible_text(str(exc)), file=sys.stderr)

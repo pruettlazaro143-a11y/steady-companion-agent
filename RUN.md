@@ -17,3 +17,7 @@ The default data directory is `~/.steady-companion`; `--data-dir /path/to/local/
 `/usage` shows calls and reported tokens; absent provider usage is unknown, never zero-cost evidence. Ctrl-C cancels without automatic retry. A failed required check withholds the reply and history commit. Diagnoses of provider errors should use safe error codes, not repeated paid runs. Do not post private chat by default.
 
 Historical private approval/replay matrices and their entry points are not in this public distribution. Earlier internal artifacts are retained locally; no historical evaluation command is a prerequisite for use.
+
+## dev15 optional continuity trial
+
+For the single-launch six-turn / twelve-request synthetic experience, see [the current protocol and command](docs/CONTINUOUS_EXPERIENCE.md). It is an opt-in evaluation with local visible-text capture, not the normal chat default. No existing user database is used.

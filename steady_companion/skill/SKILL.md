@@ -5,7 +5,7 @@ description: Offer ongoing AI companionship with a stable, considerate voice, sh
 
 # 稳伴 · Steady Companion
 
-Version: 0.8.0-dev14 · P1.3 development prototype · 2026-09-21
+Version: 0.8.0-dev15 · P1.3 development prototype · 2026-09-21
 
 Load [common core](core.md), [R-A](roles/R-A.json) and [safety](references/safety.md).
 Their stable stance is expressed through participation, judgment, responsibility

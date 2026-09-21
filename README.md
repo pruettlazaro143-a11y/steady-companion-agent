@@ -4,7 +4,7 @@
 
 An open-source AI companion framework with user-controlled memory and experimental interaction boundaries. Runnable agent + reusable skill.
 
-**Experimental preview — Agent 0.6.0.dev14 / Skill 0.8.0-dev14.** The aim is sustained companionship with a consistent stance and user-controlled continuity. Natural conversation, psychological support and practical benefit remain unvalidated. This is not a clinician, treatment service or emergency monitor.
+**Experimental preview — Agent 0.6.0.dev15 / Skill 0.8.0-dev15.** The aim is sustained companionship with a consistent stance and user-controlled continuity. Natural conversation, psychological support and practical benefit remain unvalidated. This is not a clinician, treatment service or emergency monitor.
 
 ## Quick start
 
@@ -18,7 +18,7 @@ python3 -m steady_companion inspect --profile daily-deepseek --connection ./conf
 python3 -m steady_companion demo
 ```
 
-`inspect` makes no network requests or credential prompts; `demo` uses temporary synthetic data and no model. Test outputs are not actual model replies. Wheel installation is also supported with `python3 -m pip install /path/to/steady_companion_agent-0.6.0.dev14-py3-none-any.whl`.
+`inspect` makes no network requests or credential prompts; `demo` uses temporary synthetic data and no model. Test outputs are not actual model replies. Wheel installation is also supported with `python3 -m pip install /path/to/steady_companion_agent-0.6.0.dev15-py3-none-any.whl`.
 
 Only when you choose to start **paid** chat:
 
@@ -55,3 +55,7 @@ This clears inherited credentials in the test subprocess and blocks socket conne
 No real inference was run for this release. Passing tests validates the program paths covered, not naturalness, universal pause detection, stable long-term companionship or psychological outcomes.
 
 MIT covers project code/material; linked external research remains under its own terms. [License](LICENSE).
+
+## Optional continuous experience (dev15)
+
+`eval-experience` previews six newly authored synthetic turns offline. The explicit live opt-in uses the existing official daily profile, session control and selective checks, a new temporary manual-memory store, and a fixed 12-request total cap. It asks whether the next scripted turn fits the actual previous reply; failure or inapplicability stops the run. Local visible reports, including withheld drafts, are never uploaded automatically. [Command, protocol and unknown cost items](docs/CONTINUOUS_EXPERIENCE.md). Program tests do not establish companionship quality.

@@ -9,3 +9,7 @@ Excluded: all private handoff/user-scope/approved-handoff files, internal review
 Publication-only source change: CLI conditionally registers archived diagnostics. Core chat and existing approved data/memory paths are identical between the internal fixed tree and the public tree. Skill installation references were updated to avoid unusable historical paid commands; persona and runtime generation/review contracts are unchanged. `scripts/test_offline.py` is the public CI entry.
 
 The public manifest enumerates every selected file and hash. Wheel and Skill bytes are checked against this public source. ZIPs exclude .git and old packages; no internal delivery ZIP is a release asset. New files added after manifest generation require regeneration and another scope review. GitHub upload status and verified commit are reported separately; a local build is not a published release.
+
+## dev15 addition
+
+Based on the verified public dev14 commit, this normal update adds only the synthetic continuous-experience runner, CLI registration, authored offline tests, docs and version metadata. User/operator run outputs stay under ignored `eval-results/` and are excluded from the manifest, ZIPs and git. No private material is re-imported. The dev14 baseline tag and artifacts remain available.

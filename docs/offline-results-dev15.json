@@ -1,0 +1,38 @@
+{
+  "agent_version": "0.6.0.dev15",
+  "skill_version": "0.8.0-dev15",
+  "baseline_commit": "253bcfee175f76b68d768960d44e66a79425c044",
+  "public_regression": {
+    "tests": 368,
+    "passed": 368,
+    "failures": 0,
+    "errors": 0,
+    "seconds": 3.544,
+    "baseline_tests": 346,
+    "new_tests": 22,
+    "original_test_files_byte_identical": 19
+  },
+  "unchanged_runtime_modules": [
+    "engine.py",
+    "interaction.py",
+    "interaction_runtime.py",
+    "natural_memory.py",
+    "memory_language.py",
+    "semantic_memory.py",
+    "store.py",
+    "pipeline.py",
+    "companion_runtime.py",
+    "companion_pipeline.py",
+    "model_access.py",
+    "chat_transport.py",
+    "provider.py",
+    "skill/core.md",
+    "skill/roles/R-A.json",
+    "skill/references/safety.md"
+  ],
+  "network": "credential-free subprocess; socket connect/connect_ex/create_connection blocked",
+  "real_inference_calls": 0,
+  "private_chat_or_user_database_access": false,
+  "github_ci": "not claimed; dev14 run blocked before tests by account billing restriction; check new remote run separately",
+  "evidence_boundary": "Injected replies and verdicts test program behavior only; no new model naturalness, check accuracy or psychological-effect evidence."
+}

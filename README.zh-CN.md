@@ -4,7 +4,7 @@
 
 开源 AI 陪伴框架：用户可控记忆、实验性互动范围控制，可运行 Agent 与可复用 Skill。
 
-**研究原型 / experimental：Agent 0.6.0.dev14、Skill 0.8.0-dev14。** 目标是持续陪伴、稳定的相处特点及用户掌控的连续性；自然度、心理学支持与实际帮助效果仍需验证。不是临床专业人员、治疗或实时监护服务。
+**研究原型 / experimental：Agent 0.6.0.dev15、Skill 0.8.0-dev15。** 目标是持续陪伴、稳定的相处特点及用户掌控的连续性；自然度、心理学支持与实际帮助效果仍需验证。不是临床专业人员、治疗或实时监护服务。
 
 ## 从源码开始
 
@@ -18,7 +18,7 @@ python3 -m steady_companion inspect --profile daily-deepseek --connection ./conf
 python3 -m steady_companion demo
 ```
 
-inspect 不联网、不读取凭据；demo 使用临时合成数据，不调用模型。模拟输出不是模型效果。也可安装当前 wheel：`python3 -m pip install /path/to/steady_companion_agent-0.6.0.dev14-py3-none-any.whl`。
+inspect 不联网、不读取凭据；demo 使用临时合成数据，不调用模型。模拟输出不是模型效果。也可安装当前 wheel：`python3 -m pip install /path/to/steady_companion_agent-0.6.0.dev15-py3-none-any.whl`。
 
 由你主动启动的**收费聊天**：
 
@@ -31,6 +31,10 @@ python3 -m steady_companion chat --profile daily-deepseek --connection ./configs
 非秘密配置已包含官方地址、deepseek-flash 别名、关闭思考、4096/90 宿主上限。普通主回复一次生成，无恢复；结构化辅助用 json_object 加宿主校验，不发送 store/json_schema/采样字段。路由别名不永久锁定权重，不发送 store 不保证供应商不留存数据。本轮仅离线验证，不宣称真实接通或效果改善。
 
 competition-nebius 与无 profile 的旧入口仍为独立 Nebius＋NVIDIA checked 路径，使用 NEBIUS_API_KEY；Start.command 明确保持 Nebius。两个入口的运行策略不同。公开仓库不代表取得比赛资格。详见 [RUN](RUN.md)。
+
+## 六轮连续体验（可选）
+
+新增 `eval-experience`：固定 session / selective，新临时 manual 合成库，最多 6 轮 / 12 请求；默认离线预览，显式 `--confirm-live` 才收费。逐轮确认后续脚本是否接得上实际前答，失败或不适用即停。本地报告不自动上传。参见 [一次启动命令、脚本和费用未知项](docs/CONTINUOUS_EXPERIENCE.md)。
 
 ## Agent、Skill 与开关
 

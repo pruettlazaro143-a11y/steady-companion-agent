@@ -1,3 +1,7 @@
+# 0.6.0.dev15 / Skill 0.8.0-dev15
+
+Adds an opt-in, six-turn continuous synthetic experience on public dev14 commit `253bcfee175f76b68d768960d44e66a79425c044`. Reuses official daily access, session scope and selective checks; fixed 12 total calls, temporary manual store, no recovery or auxiliaries. Default offline preview; explicit paid/capture opt-in and host-only continuation applicability checks. Local reports separate delivered text, withheld candidates, service usage, technical errors and pending human judgments. Production runtime and memory mechanisms unchanged. No real model calls during implementation.
+
 # Changelog
 
 ## 0.6.0.dev14 / Skill 0.8.0-dev14 — experimental public preview

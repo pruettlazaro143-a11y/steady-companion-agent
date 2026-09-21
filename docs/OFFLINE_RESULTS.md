@@ -1,3 +1,15 @@
+# Current offline verification — dev15
+
+**368 public tests passed**, 0 failures/errors, 3.544 s: all 346 public dev14 tests plus 22 new execution/report tests. All 19 original public test files are byte-identical. Credential-free subprocess with network connections blocked. One complete public regression, no real model calls.
+
+New coverage includes full six-turn actual fixture history, selective twelve-call maximum, non-applicability/cancellation, withheld/unknown/technical outcomes, returned and missing usage, HTTP/timeout/empty output, log write failure, temporary-store isolation, exclusive outputs, and actual official request bodies. Fixtures do not demonstrate semantic quality. Existing runtime, memory, persona and transport modules are byte-identical to public dev14.
+
+[Machine evidence](offline-results-dev15.json) · [test output](offline-tests-dev15.txt) · [experience protocol](CONTINUOUS_EXPERIENCE.md). GitHub CI is separately reported; the prior dev14 run never started tests because of an account restriction. No claim of cloud pass.
+
+The historical internal 673 result below was **not rerun** in this public-source task.
+
+---
+
 # Actual offline verification — dev14
 
 - Internal full regression: **673 passed**, 0 failures/errors, 11.996 s. Original **31 test files / 648 tests byte-identical**, plus 25 new F1–F5 tests. No old test expectations weakened.

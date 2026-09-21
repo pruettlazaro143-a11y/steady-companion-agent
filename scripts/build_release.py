@@ -2,7 +2,7 @@
 from pathlib import Path,PurePosixPath
 import hashlib,json,os,shutil,subprocess,sys,tempfile,zipfile
 ROOT=Path(__file__).resolve().parents[1]
-VERSION='0.6.0.dev14';SKILL='0.8.0-dev14'
+VERSION='0.6.0.dev15';SKILL='0.8.0-dev15'
 
 def sha(data):return hashlib.sha256(data).hexdigest()
 def archive(path,items):
