@@ -21,18 +21,18 @@ from .engine import Usage
 from .interaction_runtime import InteractionConversation
 from .store import Store
 
-PROTOCOL = 'continuous-experience-v1'
+PROTOCOL = 'continuous-experience-v2'
 MAX_TURNS = 6
 MAX_CALLS = 12
 # Newly authored synthetic material, not private chat or fabricated assistant history.
 # The purpose labels stay in the host report and are never sent to the model.
 SCENARIO = (
-    ('interest', '我最近迷上了画虚构城市的散步地图，给小巷起名字比画路还好玩。昨天画了一条只在下雨时营业的街。'),
-    ('co_creation', '顺着刚才聊的地图，我们给这条雨天才营业的街编一间小店吧。你觉得店里会卖什么？'),
-    ('setback_without_help_request', '说到给人介绍地图，我今天在社团展示自己的作品，练了好几遍，上台却漏讲了最想分享的那条小路，有点失落。我现在只是想说说这件事。'),
-    ('specific_help', '下次还要介绍这张地图。帮我写一个三十秒左右的开场吧，让大家先注意到那条雨天营业的街。'),
-    ('narrow_scope', '我们只讨论这次地图介绍的开头，别追问我过去的经历了。把开头改成两句能直接说出口的话就好。'),
-    ('pause', '我有点累了，先不聊这个了，也先不分析了。'),
+    ('interest', '最近在用厨房里的蔬菜拍定格动画，那颗戴纸帽的土豆怎么看都像一位船长。'),
+    ('co_creation', '接着刚才的联想，给这位土豆船长编一次出航吧，你想让它遇到什么？'),
+    ('setback_without_help_request', '今天在社区放了自己的蔬菜短片，介绍提前练过，放映时却忘了感谢帮忙布景的人，挺失落的。我暂时只是说说这件事。'),
+    ('specific_help', '下次放映前，帮我写一段二十秒左右的蔬菜短片介绍吧，把这位土豆船长介绍给大家。'),
+    ('narrow_scope', '只改这次短片介绍，别追问我以前的经历了。把它改成两句方便直接念的话。'),
+    ('pause', '今天先不聊这个了，也先不分析了。'),
 )
 
 
@@ -254,7 +254,7 @@ def evaluate(args, *, ask=None, say=print):
     if args.interaction_control != 'session' or args.interaction_check != 'selective':
         raise StageError('setup', 'configuration')
     rows = material()
-    root = args.output or Path('eval-results') / ('continuous-dev15-' + datetime.now().strftime('%Y%m%d-%H%M%S') + '-' + uuid4().hex[:6])
+    root = args.output or Path('eval-results') / ('continuous-dev16-' + datetime.now().strftime('%Y%m%d-%H%M%S') + '-' + uuid4().hex[:6])
     report = Report(root)
     say('本地报告目录：' + str(report.root.resolve()))
     try:

@@ -1,6 +1,6 @@
 # Companion host and reusable Skill
 
-The daily-deepseek profile uses companion-runtime-v1: complete common core, R-A,
+The daily-deepseek profile uses companion-runtime-v3: complete common core, R-A,
 safety, actual speaker-tagged history and relevant authorized memory/topic data.
 One plain-text main generation, no automatic output recovery or general review.
 Optional user-enabled memory assistance, summary and explicit /learn share the
@@ -15,4 +15,10 @@ fixtures do not prove semantic reliability, naturalness or clinical benefit.
 
 The Skill alone supplies guidance, not a database, host state machine, transport,
 request budget or enforcement guarantee. No implicit paid-call permission.
-Runtime v2 demonstrations are development data, never current-user facts.
+Runtime v3 demonstrations are development data, never current-user facts. The
+Agent tracks bounded writing-task objects and local inquiry restrictions without
+a new interpretation call. Its request-local source references distinguish
+assistant proposals from user utterances; they are not persistent user facts.
+These mechanisms and the new guidance have offline coverage, not new evidence
+of model naturalness or semantic accuracy. Standalone Skill installation does
+not enable them.

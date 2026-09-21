@@ -1,3 +1,13 @@
+# Current offline verification — dev16
+
+**392 public tests passed**, 0 failures/errors, 4.105 s: all 368 dev15 tests plus 24 new scoped-participation tests. All 20 original public test files are byte-identical; no old expectations changed. One complete public regression, credentials cleared and network connections blocked. Real inference calls: **0**.
+
+Covered: topic-independent task spans, local boundary/task coexistence, compound and named pauses, withdrawals/reopening/unknown input, quote/report/conditional sources, presupposition signals, actual delivery after fixture verdicts, budget/cancel/unknown withholding, actual auto-memory records, request-local source/adoption references and bounded versioned generation materials. Old v1/v2, core/R-A/safety, storage and memory modules remain byte-identical. Tests do not establish real semantic accuracy or naturalness.
+
+[Machine evidence](offline-results-dev16.json) · [test output](offline-tests-dev16.txt) · [implemented vs guidance vs unverified](DEV16.md). GitHub CI is reported separately; earlier runs were blocked by an account restriction.
+
+---
+
 # Current offline verification — dev15
 
 **368 public tests passed**, 0 failures/errors, 3.544 s: all 346 public dev14 tests plus 22 new execution/report tests. All 19 original public test files are byte-identical. Credential-free subprocess with network connections blocked. One complete public regression, no real model calls.

@@ -5,7 +5,7 @@ description: Offer ongoing AI companionship with a stable, considerate voice, sh
 
 # 稳伴 · Steady Companion
 
-Version: 0.8.0-dev15 · P1.3 development prototype · 2026-09-21
+Version: 0.8.0-dev16 · P1.3 development prototype · 2026-09-21
 
 Load [common core](core.md), [R-A](roles/R-A.json) and [safety](references/safety.md).
 Their stable stance is expressed through participation, judgment, responsibility
@@ -39,9 +39,9 @@ for host implementation. No extra review or planning layer.
 The explicit experimental `companion` host uses a separate versioned runtime,
 full core/R-A/safety, one natural-language generation and limited local output
 checks; it does not load this entire installation guide or run general model
-review. The daily-deepseek profile uses companion-v1; the no-profile legacy entry remains checked. See [companion host usage](references/p13-companion.md)
-when installing or operating this mode. Runtime v2 adds scoped synthetic
-development demonstrations as isolated data; they are not current history or
+review. The daily-deepseek profile uses companion-v3; the no-profile legacy entry remains checked. See [companion host usage](references/p13-companion.md)
+when installing or operating this mode. Runtime v3 adds participation guidance, request-local source relations and scoped
+synthetic development demonstrations as isolated data; they are not current history or
 user facts. Historical evaluation plans are not included in the public distribution. The Skill alone cannot reproduce host
 storage, output guards or request budgets.
 

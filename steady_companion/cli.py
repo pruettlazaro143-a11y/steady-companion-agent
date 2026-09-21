@@ -656,7 +656,7 @@ def parser() -> argparse.ArgumentParser:
     chat_parser.add_argument("--emoji", choices=("off", "light"), default="off")
     experience = sub.add_parser('eval-experience', help='Six-turn synthetic continuity trial; offline by default; fixed 12-request cap')
     experience.add_argument('--connection', type=Path, default=Path('configs/deepseek-official.json'))
-    experience.add_argument('--output', type=Path, help='New exclusive local report directory; default unique eval-results/continuous-dev15-*')
+    experience.add_argument('--output', type=Path, help='New exclusive local report directory; default unique eval-results/continuous-dev16-*')
     experience.add_argument('--interaction-control', choices=('session',), default='session')
     experience.add_argument('--interaction-check', choices=('selective',), default='selective')
     experience.add_argument('--confirm-live', action='store_true', help='Authorize at most 12 paid requests and local synthetic visible reply/withheld-candidate capture; no retry')

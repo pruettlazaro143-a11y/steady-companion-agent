@@ -10,7 +10,7 @@ Legacy Nebius (paid only after a user message):
 python3 -m steady_companion chat --profile competition-nebius --max-calls 4
 ```
 
-No-profile `chat` and `Start.command` retain Nebius checked mode. They normally need generation plus review, with the existing bounded shared repair opportunity. The current daily profile uses companion-v1 without output recovery. Do not describe their difference as only the model name.
+No-profile `chat` and `Start.command` retain Nebius checked mode. They normally need generation plus review, with the existing bounded shared repair opportunity. The current daily profile uses companion-v3 without output recovery. Do not describe their difference as only the model name.
 
 The default data directory is `~/.steady-companion`; `--data-dir /path/to/local/data` is a **global option before chat/inspect**. Use separate directories for separate people. No migration is required by dev14. Existing SQLite schema 2 and user choices remain intact. Going back to dev13 restores old interaction behavior; session scope does not persist across process restart. Back up data locally before manual version changes; backups must not be published.
 
@@ -18,6 +18,8 @@ The default data directory is `~/.steady-companion`; `--data-dir /path/to/local/
 
 Historical private approval/replay matrices and their entry points are not in this public distribution. Earlier internal artifacts are retained locally; no historical evaluation command is a prerequisite for use.
 
-## dev15 optional continuity trial
+## dev16 optional continuity trial
 
 For the single-launch six-turn / twelve-request synthetic experience, see [the current protocol and command](docs/CONTINUOUS_EXPERIENCE.md). It is an opt-in evaluation with local visible-text capture, not the normal chat default. No existing user database is used.
+
+Dev16 replaces the default synthetic trial material with a new vegetable stop-motion scenario (continuous-experience-v2); dev15 and its original material remain in the dev15 tag. No real-run authorization is inferred from an earlier trial. The runtime instruction/examples change is separate from model access; endpoint/model/thinking/token/timeout settings are unchanged.

@@ -13,3 +13,7 @@ The public manifest enumerates every selected file and hash. Wheel and Skill byt
 ## dev15 addition
 
 Based on the verified public dev14 commit, this normal update adds only the synthetic continuous-experience runner, CLI registration, authored offline tests, docs and version metadata. User/operator run outputs stay under ignored `eval-results/` and are excluded from the manifest, ZIPs and git. No private material is re-imported. The dev14 baseline tag and artifacts remain available.
+
+## dev16 addition
+
+Adds bounded interaction/source-reference code and new synthetic generation contrasts and regression scenarios. All returned real user/model output stays out of public fixtures. Prior terminal-review counts are kept only in local work evidence; no original operator report is imported. Production memory storage scope and historical published tags remain unchanged.

@@ -1,0 +1,51 @@
+{
+  "agent_version": "0.6.0.dev16",
+  "skill_version": "0.8.0-dev16",
+  "baseline_commit": "8da2b7e1381ce576df8a5956b069f1f9da5eee8d",
+  "public_regression": {
+    "tests": 392,
+    "passed": 392,
+    "failures": 0,
+    "errors": 0,
+    "seconds": 4.105,
+    "baseline_tests": 368,
+    "new_tests": 24,
+    "original_test_files_byte_identical": 20
+  },
+  "unchanged_modules": [
+    "natural_memory.py",
+    "memory_language.py",
+    "semantic_memory.py",
+    "store.py",
+    "pipeline.py",
+    "companion_pipeline.py",
+    "chat_transport.py",
+    "provider.py",
+    "continuity.py",
+    "skill/core.md",
+    "skill/roles/R-A.json",
+    "skill/references/safety.md",
+    "runtime/companion-v1.md",
+    "runtime/companion-v2.md",
+    "runtime/companion-examples-v1.json"
+  ],
+  "materials": {
+    "companion-v1.md": {
+      "chars": 594,
+      "sha256": "6e2b8a3a813cb0c10e8290f70584d709012ad9cc7595047bbbd436e9ba96ffd9"
+    },
+    "companion-v3.md": {
+      "chars": 1319,
+      "sha256": "d8f9cc7196e32874b4966d75050727bda8b6dffe4908a5a1509353019143539c"
+    },
+    "companion-examples-v3.json": {
+      "chars": 1609,
+      "sha256": "4a9d3775016d08d7fc2708d59b31e73ef1f00b7b98703a53b3f6a6e87cd300e7"
+    }
+  },
+  "network": "credential-free subprocess; socket connect/connect_ex/create_connection blocked",
+  "real_inference_calls": 0,
+  "private_chat_or_user_database_access": false,
+  "semantic_interpreter_calls_added": 0,
+  "evidence_boundary": "Fixtures prove scoped execution/storage/compiler behavior only. Instructions and source links do not prove model adherence or naturalness. Actual prior user-returned outputs are not included."
+}

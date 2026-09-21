@@ -157,7 +157,7 @@ def resolve(profile, connection_file=None):
         if cfg is None: raise _config_error()
         validate_policy(cfg, transport_policy)
     return AccessPlan(profile, data['provider'], data['protocol'], cfg, credential,
-                      RuntimePolicy('companion', 'v1', False), missing, data['temperature'], data['top_p'],
+                      RuntimePolicy('companion', 'v3', False), missing, data['temperature'], data['top_p'],
                       data['max_tokens'], data['timeout'], data['response_format'], transport_policy)
 
 

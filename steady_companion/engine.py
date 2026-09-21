@@ -192,7 +192,7 @@ class Conversation:
             raise ValueError("Invalid mode or request limit")
         if response_mode == "companion" and not use_skill:
             raise ValueError("Companion requires the common core and safety context")
-        if companion_runtime_version not in ('v1','v2'):raise ValueError('Unknown companion runtime version')
+        if companion_runtime_version not in ('v1','v2','v3'):raise ValueError('Unknown companion runtime version')
         self.companion_runtime_version=companion_runtime_version
         self.allow_recovery = bool(allow_recovery)
         self._context_epoch = 0
