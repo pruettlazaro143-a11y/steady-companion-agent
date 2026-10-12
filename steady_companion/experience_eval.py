@@ -18,6 +18,7 @@ from . import model_access
 from .chat_transport import DEEPSEEK_POLICY, response_metadata
 from .diagnostics import StageError, error_info, safe_log, visible_fragment
 from .engine import Usage
+from .experience_scenarios import SCENARIO_IDS, SUPPLEMENTAL, review_template
 from .interaction_runtime import InteractionConversation
 from .store import Store
 
@@ -36,7 +37,11 @@ SCENARIO = (
 )
 
 
-def material():
+def material(scenario_id='baseline'):
+    if scenario_id not in SCENARIO_IDS:
+        raise StageError('setup', 'configuration')
+    if scenario_id != 'baseline':
+        return [turn.material(i) for i, turn in enumerate(SUPPLEMENTAL[scenario_id], 1)]
     return [{'turn': i, 'purpose': goal, 'user_input': text}
             for i, (goal, text) in enumerate(SCENARIO, 1)]
 
@@ -169,7 +174,8 @@ def stop_reason(failure, check):
     return 'technical_failure'
 
 
-def run_session(client, report, plan, *, ask=input, say=print):
+def run_session(client, report, plan, *, ask=input, say=print, scenario_id='baseline'):
+    rows = material(scenario_id)
     recorded = RecordedClient(client, report)
     report.secrets = (getattr(client.config, 'api_key', ''),)
     status = 'technical_failure'
@@ -187,24 +193,29 @@ def run_session(client, report, plan, *, ask=input, say=print):
         report.emit({'event': 'session', 'storage': 'new_temporary_synthetic_directory',
                      'memory_mode': 'manual', 'memory_assist': False, 'context_summary': False,
                      'interaction_control': 'session', 'interaction_check': 'selective'})
-        for index, (_, text) in enumerate(SCENARIO, 1):
+        for row_material in rows:
+            index, text = row_material['turn'], row_material['user_input']
             say('\n第 ' + str(index) + ' 轮合成输入：' + text)
             if index > 1:
                 # Last actual delivered answer is on screen; operator input never
                 # enters model history, is not saved, and cannot expand the script.
                 say('请对照上轮实际回复判断下一句是否接得上；这不是自然度评分。')
+                criterion = row_material.get('applicability', '对照实际交付前文，确认这句输入能接上；不能确认就停止。')
+                say('适用条件：' + criterion)
                 try:
                     applicable = ask('适用才输入 y；其他输入或无法确认均停止：').strip().lower() == 'y'
                 except EOFError:
                     applicable = False
                 except KeyboardInterrupt:
                     report.emit({'event': 'applicability', 'turn': index, 'applicable': None,
-                                 'basis': 'operator_cancelled'})
+                                 'basis': 'operator_cancelled', 'criterion': criterion,
+                                 'previous_delivered_turn': index - 1})
                     status = 'cancelled'
                     failure = {'stage': 'context', 'code': 'cancelled'}
                     break
                 report.emit({'event': 'applicability', 'turn': index, 'applicable': applicable,
-                             'basis': 'operator_read_actual_previous_reply'})
+                             'basis': 'operator_read_actual_previous_reply', 'criterion': criterion,
+                             'previous_delivered_turn': index - 1})
                 if not applicable:
                     status = 'not_applicable'
                     break
@@ -218,6 +229,9 @@ def run_session(client, report, plan, *, ask=input, say=print):
             except (Exception, KeyboardInterrupt) as exc:
                 failure = error_info(exc, getattr(exc, 'stage', agent._diagnostics.current))
             row = turn_record(index, text, agent, recorded.records[before:], result, failure)
+            row['scenario_id'] = scenario_id
+            if scenario_id != 'baseline':
+                row['review_criteria'] = {k: row_material[k] for k in ('purpose', 'expected_behavior', 'failure_criteria', 'applicability')}
             report.emit(row)
             if failure:
                 status = stop_reason(failure, agent.check_status['status'])
@@ -233,12 +247,13 @@ def run_session(client, report, plan, *, ask=input, say=print):
                      'durable_memories': len(store.list_memories()), 'shared_notes': len(store.list_notes()),
                      'automatic_memories': len(agent.natural_memory.list()),
                      'completed_history_messages': len(agent.history), 'temporary_directory_cleanup': 'on_context_exit'})
-    summary = {'event': 'summary', 'status': status, 'completed_user_turns': completed,
+    summary = {'event': 'summary', 'status': status, 'scenario_id': scenario_id, 'completed_user_turns': completed,
                'attempted_user_turns': attempted, 'maximum_user_turns': MAX_TURNS,
                'not_completed_turns': list(range(completed + 1, MAX_TURNS + 1)),
                'usage': asdict(usage), 'request_limit': MAX_CALLS, 'retries': 0,
                'amount': None, 'amount_status': 'unknown', 'error': failure,
-               'temporary_data_removed': True, 'human_review': review_fields('not_assessed')}
+               'temporary_data_removed': True, 'human_review': review_fields('not_assessed'),
+               'longitudinal_review': review_template()}
     report.emit(summary)
     say('体验结束：' + status + '；完成 ' + str(completed) + '/6 轮；请求 ' + str(usage.calls) + '/12；已报告 token ' +
         str(usage.total_tokens) + '，未报告用量请求 ' + str(usage.unreported_calls) + '；金额未知。')
@@ -247,21 +262,25 @@ def run_session(client, report, plan, *, ask=input, say=print):
 
 def evaluate(args, *, ask=None, say=print):
     # Validation and exclusive outputs precede credentials and client creation.
+    scenario_id = getattr(args, 'scenario', 'baseline')
+    rows = material(scenario_id)
     plan = model_access.resolve('daily-deepseek', args.connection)
     plan.require_ready()
     if plan.transport_policy != DEEPSEEK_POLICY:
         raise StageError('setup', 'configuration')
     if args.interaction_control != 'session' or args.interaction_check != 'selective':
         raise StageError('setup', 'configuration')
-    rows = material()
-    root = args.output or Path('eval-results') / ('continuous-dev16-' + datetime.now().strftime('%Y%m%d-%H%M%S') + '-' + uuid4().hex[:6])
+    prefix = 'continuous-dev16-' if scenario_id == 'baseline' else 'continuous-dev16-' + scenario_id + '-'
+    root = args.output or Path('eval-results') / (prefix + datetime.now().strftime('%Y%m%d-%H%M%S') + '-' + uuid4().hex[:6])
     report = Report(root)
     say('本地报告目录：' + str(report.root.resolve()))
     try:
         report.emit({'event': 'plan', 'protocol': PROTOCOL, 'agent_version': __version__,
+                     'scenario_id': scenario_id, 'scenario_material_version': 'dev16-supplement-1' if scenario_id != 'baseline' else 'dev16-baseline',
                      'execution': 'live_requested' if args.confirm_live else 'offline_preview',
                      'synthetic_only': True, 'material_sha256': hashlib.sha256(json.dumps(rows, ensure_ascii=False).encode()).hexdigest(),
                      'scenario': rows, 'profile': plan.status(), 'request_limit': MAX_CALLS, 'turn_limit': MAX_TURNS,
+                     'human_review_template': review_template(),
                      'cost': {'amount': None, 'status': 'unknown', 'generation_max_tokens': 4096,
                               'check_max_tokens': 1200, 'output_token_ceiling': 6 * (4096 + 1200),
                               'formula': 'reported input/cache tokens * applicable input rates + reported output tokens * output rate',
@@ -271,7 +290,7 @@ def evaluate(args, *, ask=None, say=print):
             say('离线预览已导出；未读取凭据、创建用户库或请求模型。--confirm-live 才授权最多 12 次请求及本地合成可见文本记录。')
             return 0
         client = model_access.connect(plan)
-        return run_session(client, report, plan, ask=ask or input, say=say)
+        return run_session(client, report, plan, ask=ask or input, say=say, scenario_id=scenario_id)
     except (Exception, KeyboardInterrupt) as exc:
         failure = error_info(exc, getattr(exc, 'stage', 'setup'))
         try:

@@ -1,4 +1,8 @@
-# Current offline verification — dev16
+# Continuous experience supplement — 2026-10-12
+
+Original 392 tests rerun successfully; full suite **407 run: 406 passed, 1 known expected failure**, 0 ordinary failures/errors, 4.795 s. The expected failure records an unresolved named-topic pause / unknown-domain text-task scope gap and is **not a pass**. All 21 original test/helper files remain byte-identical. Credential-free, network-blocked subprocess; real model calls **0**. Naturalness and checker accuracy remain unverified; no new release artifacts or cloud CI success claimed. [Detailed audit and inputs](CONTINUOUS_EXPERIENCE_SUPPLEMENT.md) · [machine evidence](experience-supplement-offline.json).
+
+# Original offline verification — dev16
 
 **392 public tests passed**, 0 failures/errors, 4.105 s: all 368 dev15 tests plus 24 new scoped-participation tests. All 20 original public test files are byte-identical; no old expectations changed. One complete public regression, credentials cleared and network connections blocked. Real inference calls: **0**.
 

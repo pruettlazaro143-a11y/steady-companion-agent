@@ -13,11 +13,11 @@
     "Start.command": "b6c98b1a330ac8a0b79b95c9cfc6790873db41e3f58d949d0aaa26a412eb4bd1",
     "configs/deepseek-official.json": "1c646baf1f5dfd145bade2827bfb3f750f28512b065f4f191fd5be36dac50391",
     "docs/ARCHITECTURE.md": "401ae00ac93b704efcf4ef7c092d2daec17118a235a80764c2613f5889dcb2a0",
-    "docs/CONTINUOUS_EXPERIENCE.md": "c6a2d1c1ab6e23af63c2329123b1ca33c59a32738b7139b711f55e1f2974e0f5",
+    "docs/CONTINUOUS_EXPERIENCE.md": "952156ef591ea87d3ee1b20679c7db8091116f95008cccd11311be65cf2074bf",
     "docs/DEV16.md": "9000c983799d4e26be665fcd16bd107c7a24dda0b2f9b27f1da684fbb34928f4",
     "docs/FIXES.md": "141580751360d9bd25aafa1b3089641a74c58b8a6899a058872681baa04e9c02",
     "docs/MEMORY.md": "0a2f2f347c1518fed47e2b3ac85bc798a3b8097f754bec60fa52eeac3d32230b",
-    "docs/OFFLINE_RESULTS.md": "a04ca4e0c6c13cf7c4580272655012b95cf8c96809bbc72ace3abd6cfa598de7",
+    "docs/OFFLINE_RESULTS.md": "1a98e2817dc955299d2075f74705696fa931daa708a324d1ca5d97748a2f057e",
     "docs/PUBLICATION.md": "084bc4184dbaf87f821edbd4ee907ce6aa0b458ac10a23a16a2b1f7a97f01f00",
     "docs/offline-results-dev15.json": "0c7336b595cced7c106208a55f67e6491b76dfb315daaeb2971e250d8a0b6e24",
     "docs/offline-results-dev16.json": "3158c064e8e87bd602c8272234053b843e5809bf4c2ec9b23ace9b1fdb55e809",
@@ -33,7 +33,7 @@
     "steady_companion/__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
     "steady_companion/architecture.py": "e35d438bb4fa2379eb9b10ec8da60a07525164aa5a3b8d7ffb7d8b2b9c65b654",
     "steady_companion/chat_transport.py": "189ecad59d5d1038c38b1ce539ce3fda436a4e5f6f0a06f6fb754c517a5ac56d",
-    "steady_companion/cli.py": "dbeae789393b1423080784a95866a3f4b878270ec40c0ceef70e4f097793632e",
+    "steady_companion/cli.py": "d6ed5f490aeb527a22d17eeaeadbcfc03e87b7e8389c1b5bbfff9c21218f9ee2",
     "steady_companion/companion_pipeline.py": "e4927a954a0888d5e675b8a2f18b08eb9372e7bab6b2dc29578dfac3ddddc8fd",
     "steady_companion/companion_runtime.py": "ec945255fd231bb4556792ced39da46e8877960dfc7d17bb833b3500a79efd94",
     "steady_companion/compare_eval.py": "84414b1dd089a8ef8694c2b6b6ddafc1b9dd42a2b9bece5745361b89f2e8f8e8",
@@ -80,7 +80,7 @@
     "steady_companion/data/p1_story.json": "544ff901856cb759f5522d36168ad448a60df852e461bfda8808704527398d9c",
     "steady_companion/diagnostics.py": "dbf18e790e94de51c4171e90158ba7763aeedef49745c7e2e8b3dd1fb7377344",
     "steady_companion/engine.py": "1efb198367fb444ea388b7d53b821e3978ab18f5a6f0ee3d24e6b870eea19974",
-    "steady_companion/experience_eval.py": "61ca68a39e509e86f4afeaa4227a028bbdd549ee4abdb119fad82c33c588fc7c",
+    "steady_companion/experience_eval.py": "33bc1426ad5f217f6a081e51974d7c8d3ad20bcd9d2b792f606a590f4f07d15a",
     "steady_companion/interaction.py": "c48f718362f2039dfcac0980f8ca8f66b9198a3c006f591b844bddee49143cc7",
     "steady_companion/interaction_runtime.py": "a4d6b637ce2748e96ba7863584192fe66a970ab66c0b927843db617a5dc8dde6",
     "steady_companion/learning.py": "5df4ed5f5bf38b768b8af3eeb283d3cee33aed79457ff2d80faaedc30bad960c",
@@ -162,6 +162,10 @@
     "tests/test_provider.py": "4d8c0fd19ed029431d5ff162c72a6c1e64af97f8d4298812bd95c5d4db78869a",
     "tests/test_scoped_participation.py": "8b8816919622b2c6c5264e1d238eb976d463da02fbbb6cb6f6462f6b998c8a9b",
     "tests/test_store.py": "4e2303c7b9b18433686df69061d7a29b81b13230b0f7c8d4605c5809fea82246",
-    "tests/test_terminal.py": "4b36caaf9d38f46ae16905434f272b50a1cbf7f5bc4e727a79079ec709698c78"
+    "tests/test_terminal.py": "4b36caaf9d38f46ae16905434f272b50a1cbf7f5bc4e727a79079ec709698c78",
+    "docs/CONTINUOUS_EXPERIENCE_SUPPLEMENT.md": "acbf26b7a50bab47faea0b02c6359da2e26c01f5010389a4fbec0ad5f6d2dc71",
+    "docs/experience-supplement-offline.json": "61f84391eef40ccf45b9fb8d09e3216d11fafdcaa68731f6ac4c403dc5ff296f",
+    "steady_companion/experience_scenarios.py": "d6b67c3c9eea52c5fcced6e0b5154e4f49a5893cf3b5cb5fbda41718a49f7390",
+    "tests/test_experience_supplement.py": "2ada1f3270c261ce650b365b590d55a73155f53c910a455a84c272a837bfe657"
   }
 }
