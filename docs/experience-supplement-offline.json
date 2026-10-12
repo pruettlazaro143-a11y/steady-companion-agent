@@ -1,0 +1,43 @@
+{
+  "date": "2026-10-12",
+  "base_commit": "c1c49640a4ff43088509f1c50a1e6d540ca97954",
+  "agent_version": "0.6.0.dev16",
+  "change": "continuous-experience synthetic evaluation supplement only",
+  "command": "python3 scripts/test_offline.py",
+  "credentials_cleared": true,
+  "network_connections_blocked": true,
+  "baseline": {
+    "tests_passed": 392,
+    "failures": 0,
+    "errors": 0,
+    "elapsed_seconds": 4.06
+  },
+  "full_regression": {
+    "tests_run": 407,
+    "tests_passed": 406,
+    "expected_failures": 1,
+    "failures": 0,
+    "errors": 0,
+    "elapsed_seconds": 4.795
+  },
+  "new_tests": 15,
+  "original_test_files_byte_identical": 21,
+  "known_unresolved_gap": {
+    "test": "test_known_gap_named_topic_pause_should_close_matching_text_task",
+    "status": "expected_failure",
+    "observation": "unknown-domain text task retains task_clarification after a named music pause; selective checker compensation unverified"
+  },
+  "real_model_calls": 0,
+  "naturalness": "unverified",
+  "checker_semantic_accuracy": "unverified",
+  "human_review_of_real_outputs": "not_performed",
+  "budget_per_independent_session": {
+    "maximum_user_turns": 6,
+    "maximum_requests": 12,
+    "automatic_retry": false,
+    "batch_runner": false
+  },
+  "fixtures": "Authored replies, operator choices, verdicts and token numbers test execution only; not quality or live use.",
+  "github_ci": "not_claimed",
+  "release_artifacts": "not_built_or_published"
+}
